@@ -82,43 +82,97 @@
 
 !function(){
 
-    var num;
+    var num0;
     //帧动画
-    function snum(){
+    function snum0(){
         //var self = this;
-        if(num < 50){
-            document.img_2.src ="http://o8yhyhsyd.bkt.clouddn.com/Unknown-" +num+ ".jpeg";
-            num++;
+        if(num0 <= 30){
+            document.img_2.src ="./img/animation_2/content_2-" +num0+ ".png";
+            num0++;
         }else{
-            num = 0;
-            document.img_2.src ="http://o8yhyhsyd.bkt.clouddn.com/Unknown-" +num+ ".jpeg";
+            num0 = 1;
+            document.img_2.src ="./img/animation_2/content_2-" +num0+ ".png";
+        }
+    }
+    var num1;
+    //帧动画
+    function snum1(){
+        //var self = this;
+        if(num1 <= 2){
+            document.img_3.src ="./img/animation_3/" +num1+ ".png";
+            document.img_5.src ="./img/animation_5/" +num1+ ".png";
+            num1++;
+        }else{
+            num1 = 1;
+            document.img_3.src ="./img/animation_3/" +num1+ ".png";
+            document.img_5.src ="./img/animation_5/" +num1+ ".png";
         }
     }
 
-    var fps = 50;
-    var now;
-    var then = Date.now();
-    var interval = 4000/fps;
-    var delta;
+    var num2;
+    //帧动画
+    function snum2(){
+        //var self = this;
+        if(num2 <= 6){
+            document.img_4.src ="./img/animation_4/" +num2+ ".png";
+            num2++;
+        }else{
+            num2 = 1;
+            document.img_4.src ="./img/animation_4/" +num2+ ".png";
+        }
+    }
+
+    var fps0 = 50;
+    var now0;
+    var then0 = Date.now();
+    var interval0 = 6500/fps0;
+    var delta0;
     window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 
-    function tick() {
+    function tick0() {
         if(window.requestAnimationFrame) {
-            requestAnimationFrame(tick);
-            now = Date.now();
-            delta = now - then;
-            if (delta > interval) {
+            requestAnimationFrame(tick0);
+            now0 = Date.now();
+            delta0 = now0 - then0;
+            if (delta0 > interval0) {
                 // 这里不能简单then=now，否则还会出现上边简单做法的细微时间差问题。例如fps=10，每帧100ms，而现在每16ms（60fps）执行一次draw。16*7=112>100，需要7次才实际绘制一次。这个情况下，实际10帧需要112*10=1120ms>1000ms才绘制完成。
-                then = now - (delta % interval);
-                snum(); // ... Code for Drawing the Frame ...
+                then0 = now0 - (delta0 % interval0);
+                snum0();
             }
         }
         else {
-            setTimeout(tick, interval);
-            snum();
+            setTimeout(tick0, interval0);
+            snum0();
         }
     }
-    tick();
+    var fps1 = 50;
+    var now1;
+    var then1 = Date.now();
+    var interval1 = 18000/fps1;
+    var delta1;
+    function tick1() {
+        if(window.requestAnimationFrame) {
+            requestAnimationFrame(tick1);
+            now1 = Date.now();
+            delta1 = now1 - then1;
+            if (delta1 > interval1) {
+                // 这里不能简单then=now，否则还会出现上边简单做法的细微时间差问题。例如fps=10，每帧100ms，而现在每16ms（60fps）执行一次draw。16*7=112>100，需要7次才实际绘制一次。这个情况下，实际10帧需要112*10=1120ms>1000ms才绘制完成。
+                then1 = now1 - (delta1 % interval1);
+
+                snum1();
+                snum2();
+            }
+        }
+        else {
+            setTimeout(tick1, interval1);
+
+            snum1();
+            snum2();
+        }
+    }
+    tick0();
+    tick1();
+
 }();
 
 
