@@ -125,7 +125,7 @@
     var fps0 = 50;
     var now0;
     var then0 = Date.now();
-    var interval0 = 6500/fps0;
+    var interval0 = 7500/fps0;
     var delta0;
     window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 
@@ -139,8 +139,7 @@
                 then0 = now0 - (delta0 % interval0);
                 snum0();
             }
-        }
-        else {
+        } else {
             setTimeout(tick0, interval0);
             snum0();
         }
@@ -162,14 +161,14 @@
                 snum1();
                 snum2();
             }
-        }
-        else {
+        } else {
             setTimeout(tick1, interval1);
 
             snum1();
             snum2();
         }
     }
+
     tick0();
     tick1();
 
