@@ -174,4 +174,7 @@
 
 }();
 
+var download = function(){
+    window.location.href="download.html";
+};
 
