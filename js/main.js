@@ -175,6 +175,6 @@
 }();
 
 var download = function(){
-    window.location.href="download.html";
+    window.location.href="./download/download.html";
 };
 
