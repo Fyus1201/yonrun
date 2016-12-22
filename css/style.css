@@ -130,23 +130,27 @@ body{
 
 .content_2{
     background: #dddddd;
-    padding: 60px 20px;
+    padding: 60px 10px;
     text-align: center;
+    overflow:hidden;
 }
 .content_3{
     background: white;
-    padding: 60px 20px;
+    padding: 60px 10px;
     text-align: center;
+    overflow:hidden;
 }
 .content_4{
     background: #dddddd;
-    padding: 60px 20px;
+    padding: 60px 10px;
     text-align: center;
+    overflow:hidden;
 }
 .content_5{
     background: white;
-    padding: 40px 20px;
+    padding: 40px 10px;
     text-align: center;
+    overflow:hidden;
 }
 /*斜效果*/
 .content_2Img{
